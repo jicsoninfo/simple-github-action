@@ -7,7 +7,7 @@ jobs:
       - name: "welcome"
         run: "Welcome to the code step by step"
 jobs:
-  hello-job:
+  bye-job:
     runs-on: ubuntu-latest
     steps:
       - name: "bye"
