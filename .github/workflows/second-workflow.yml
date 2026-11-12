@@ -1,5 +1,8 @@
 name: Second Wrokflow
-on: push
+# on: push
+on: 
+  push:
+  workflow_dispatch:
 jobs:
   hello-job:
     runs-on: ubuntu-latest
