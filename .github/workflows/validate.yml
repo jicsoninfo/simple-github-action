@@ -1,7 +1,8 @@
-name: Validate files
-on:  push
+name: Jobs Test
+# on:  push
+on: workflow_dispatch
 jobs:
-  validate:
+  validate-html:
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
