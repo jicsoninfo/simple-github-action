@@ -13,7 +13,7 @@ jobs:
           echo "Validating files..."
           test -f index.html
   
-  validate js:
+  validate-js:
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
@@ -24,8 +24,8 @@ jobs:
           echo "Validating files..."
           test -f script.js
 
-  validate code:
-    needs: [validate-html, validate js]
+  validate-code:
+    needs: [validate-html, validate-js]
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
