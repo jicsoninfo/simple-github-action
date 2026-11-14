@@ -1,8 +1,14 @@
 name: Jobs Test
-on:  push
+# on:  push
 # on: workflow_dispatch
+on:
+  workflow_run:
+    workflows: [First Workflow]
+    types:
+      - completed
 jobs:
   validate-html:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
@@ -14,6 +20,7 @@ jobs:
           test -f index.html
   
   validate-js:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
