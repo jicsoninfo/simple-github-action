@@ -1,7 +1,7 @@
 name: Second Wrokflow
 # on: push
 on: 
-  push:
+  # push:
   workflow_dispatch:
 jobs:
   hello-job:

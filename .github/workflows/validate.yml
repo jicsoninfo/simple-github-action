@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Validate files
         run: |
@@ -16,3 +16,8 @@ jobs:
         run: |
           echo "Validating files..."
           test -f script.js
+
+      - name: Validate js code
+        run: |
+          echo "Validating code..."
+          node --check script.js
